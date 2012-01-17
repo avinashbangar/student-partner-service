@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+        <link href="/media/css/style.css" rel="stylesheet" type="text/css" />
+	</head>
+        <body>
+        <div id="single-header-container">
+            <div id="single-header">
+                <div id="logo-container">
+                    <a href="http://www.tutkiun.com/?ref=logo"><img src="http://a2.twimg.com/a/1311711610/phoenix/img/front/logo.png" alt="Tutkiun"></a>
+                </div>
+                <ul id="main-navigation">
+                    <li id="Home"><a href="/search/">Home</a></li>
+                    <!--li id="Signin"><a href="http://www.tutkiun.com/sign-in/">Sign In</a></li-->
+                    <li id="Signup"><a href="/sign-up/">Sign Up</a></li>
+                    <li id="About"><a href="/about/">About</a></li>
+                    <li id="Contact"><a href="/contact/">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+               {% block content %}
+               {% endblock %}
+        </body>
+</html>

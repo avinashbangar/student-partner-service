@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="searchTable" width="80%">
+      <tr>
+        <td style="width:50%">
+               <h1>Student finder partner</h1>
+               <h3 style="padding: 5px;">An application that will help student to find a partner (male/female) to stay for one night before the examination day at that city.</h3>
+         </td>
+         <td class="leftBorder">
+                <form action="/results/" method="post">
+                    <table>
+
+                            <tr>
+                                    <td><label class="formlabel" for="user_examcenter">Name</label></td>
+                                    <td>{{ profile.name }}</td>
+                            </tr>
+
+                            <tr>
+                                    <td><label class="formlabel" for="user_examcenter">Exam Center</label></td>
+                                    <td>{{ profile.exam_city.name }}</td>
+                            </tr>
+                            <tr>
+                                    <td><label class="formlabel" for="user_examcenter">Exam Date</label></td>
+                                    <td>{{ profile.exam_date }}</td>
+                            </tr>
+                            <tr>
+                                    <td><label class="formlabel" for="user_examcenter">Email Id</label></td>
+                                    <td>{{ profile.email }}</td>
+                            </tr>
+                            <tr>
+                                    <td><label class="formlabel" for="user_examcenter">Mobile Number</label></td>
+                                    <td>{{ profile.mobile_number }}</td>
+                            </tr>
+                            <tr>
+                                    <td><label class="formlabel" for="user_examcenter">Current City</label></td>
+                                    <td>{{ profile.current_city }}</td>
+                            </tr>
+                    </table>
+
+         </td>
+      </tr>
+</table>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="searchTable" width="80%">
+      <tr>
+        <td style="width:50%">
+               <h1>Student finder partner</h1>
+               <h3 style="padding: 5px;">An application that will help student to find a partner (male/female) to stay for one night before the examination day at that city.</h3>
+         </td>
+         <td class="leftBorder">
+                <form action="/results/" method="post">
+                {% if exists %}
+                    <table>
+                    {% for data in name %}
+                            <tr>
+                                    <td><label class="formlabel" for="user_examcenter">{{ data.name }}</label></td>
+                                    <td><a href="/message/{{ data.id }}/">Request to be partner</a></td>
+                            </tr>
+                    {% endfor %}
+                    </table>
+
+                {% else %}
+                    <h2>Nobody is there,but don't worry! register yourself <a href="/sign-up/">here</a>, we will mail you as soon as we find someone</h2>
+                {% endif %}
+         </td>
+      </tr>
+</table>
+{% endblock %}

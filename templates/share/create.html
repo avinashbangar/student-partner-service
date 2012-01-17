@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<script language="javascript" src="/media/js/livevalidation_standalone.js"></script>
+    <table class="searchTable" width="80%">
+      <tr>
+        <td style="width:50%;">
+               <h1>Student partner finder</h1>
+               <h3 style="padding: 5px;">An application that will help student to find a partner (male/female) to stay for one night before the examination day at that city.</h3>
+         </td>
+         <td class="leftBorder">
+                <form action="" method="post">
+                <table class="registrationTable">
+                        <tr>
+                          <td colspan="2" style="text-align:right"><h1>Sign Up. It's Easy!</h1></td>
+                        </tr>
+                        <tr>
+                                <td><label class="formlabel" for="user_name">Name</label></td>
+                                <td><input class="forminput" type="text" name="username" id="username" value="">
+                                    <script>
+                                        var username = new LiveValidation( 'username', {onlyOnSubmit: true });
+                                        username.add( Validate.Presence ,
+                                        { failureMessage: "Please enter your name" });
+                                        username.add( Validate.Length, { maximum: 70,
+                                            failureMessage: "Name should not be more than 70 characters" });
+                                    </script>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td><label class="formlabel" for="user_email">Email</label></td>
+                                <td><input class="forminput" type="text" name="email" id="email" value="">
+                                    <script>
+                                        var email = new LiveValidation( 'email', {onlyOnSubmit: true } );
+                                        email.add( Validate.Presence ,
+                                        { failureMessage: "Please enter Email Address" });
+                                        email.add( Validate.Email,
+                                        { failureMessage: "Please enter valid Email Address" });
+                                    </script>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td><label class="formlabel" for="user_gender">Gender</label></td>
+                                <td><input class="radiobutton" type="radio" name="sex" value=1 checked/><span class="radiobutton">Male</span> <input class="radiobutton" type="radio" name="sex" value=2 /><span class="radiobutton">Female</span></td>
+                        </tr>
+                        <tr>
+                                <td><label class="formlabel" for="user_mobile">Mobile No.</label></td>
+                                <td><input class="forminput" type="text" name="mobile_number" id="mobile" value="">
+                                    <script>
+                                        var mobile = new LiveValidation( 'mobile', {onlyOnSubmit: true });
+                                        mobile.add( Validate.Presence ,
+                                        { failureMessage: "Please enter your mobile number" });
+                                        mobile.add( Validate.Length, { maximum: 10,
+                                            failureMessage: "Mobile Number should not be more than 10 characters" });
+                                        mobile.add( Validate.Numbericality, {
+                                            failureMessage: "Mobile Number should consist of digits only" });
+                                    </script>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td><label class="formlabel" for="user_examcenter">Exam Center City</label></td>
+                                <td>
+                                    <select class="forminput" name="exam_city">
+                                    <option value="1">Ahmedabad</option>
+                                    <option value="2">Bengaluru</option>
+                                    <option value="3">Chennai</option>
+                                    <option value="4">Delhi</option>
+                                    <option value="5">Hyderabad</option>
+                                    <option value="6">Kolkata</option>
+                                    <option value="7">Mumbai</option>
+                                    </select>
+
+                                </td>
+                        </tr>
+                        <tr>
+                                <td><label class="formlabel" for="user_examdate">Exam Date</label></td>
+                                <td>{% if exists == 1 %}
+                                    <input type="text" class="forminput" name="exam_date" value={{ exam_date }} id="datepicker" class="datepicker" readonly="readonly">
+                                    {% else %}
+                                    <input type="text" class="forminput" name="exam_date" value="" id="datepicker" class="datepicker" readonly="readonly">
+                                    {% endif %}
+                                    <script>
+                                        $(function() {
+                                            $( "#datepicker" ).datepicker({ minDate: -0, dateFormat: 'yy-mm-dd'});
+                                        });
+                                        var datepicker = new LiveValidation( 'datepicker', {onlyOnSubmit: true } );
+                                        datepicker.add( Validate.Presence ,
+                                        { failureMessage: "Please select date from datepicker" });
+                                    </script>
+                                </td>
+                        </tr>
+            			<tr>
+                                <td><label class="formlabel" for="user_city">Current City</label></td>
+                                <td><input type="text" class="forminput" name="current_city" value=""></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td><input class="submit" type="submit" name="submit" value="Register"></td>
+                        </tr>
+                </table>
+                </form>
+             </td>
+             </tr>
+            </table>
+{% endblock %}
+ 

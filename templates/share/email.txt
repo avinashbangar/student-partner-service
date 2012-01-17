@@ -1,0 +1,12 @@
+                                                             
+Hi {{ name }},
+
+Hope you are studying well for your exam.
+
+Avinash has requested you to be a partner for 1 night stay before the exam at {{ city }}.
+So you can divide the expenses.
+
+Click on --> http://shareit.tutkiun.com/about, to get more details on Avinash and confirm request.
+
+Thanks,
+ShareIt Team.

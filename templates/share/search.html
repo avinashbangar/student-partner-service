@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="searchTable" width="80%">
+      <tr>
+        <td style="width:50%">
+               <h1>Student finder partner</h1>
+               <h3 style="padding: 5px;">An application that will help student to find a partner (male/female) to stay for one night before the examination day at that city.</h3>
+         </td>
+         <td class="leftBorder">
+                <form action="/results/" method="post">
+                <table>
+                        <tr>
+                                <td><label class="formlabel" for="user_examcenter">Exam Center City</label></td>
+                                <td>
+                                    <select class="forminput" name="exam_city">
+                                    <option value="1">Ahmedabad</option>
+                                    <option value="2">Bengaluru</option>
+                                    <option value="3">Chennai</option>
+                                    <option value="4">Delhi</option>
+                                    <option value="5">Hyderabad</option>
+                                    <option value="6">Kolkata</option>
+                                    <option value="7">Mumbai</option>
+                                    </select>
+
+                                </td>
+                        </tr>
+                        <tr>
+                                <td><label class="formlabel" for="user_examdate">Exam Date</label></td>
+                                <td><input class="forminput" type="text" name="exam_date" value="" id="datepicker" class="datepicker" readonly="readonly">
+                                    <script>
+                                        $(function() {
+                                            $( "#datepicker" ).datepicker({ minDate: -0, dateFormat: 'yy-mm-dd'});
+                                        });
+
+                                    </script>
+                                </td>
+                        </tr>
+
+                        <tr>
+                                <td><label class="formlabel" for="user_gender">Gender</label></td>
+                                <td><input class="radiobutton" type="radio" name="sex" value="1" CHECKED/><span class="radiobutton">Male</span>&nbsp;<input class="radiobutton" type="radio" name="sex" value="2"/><span class="radiobutton">Female</span></td>
+                        </tr>
+                        <tr>
+                                <td></td>
+                                <td><input class="submit" type="submit" title="Search" name="Search"></td>
+                        </tr>
+                </table>
+                </form>
+              </td>
+             </tr>
+            </table>
+{% endblock %}

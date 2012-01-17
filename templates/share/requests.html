@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="searchTable" width="80%">
+      <tr>
+        <td class="leftBorder">
+                <form action="/results/" method="post">
+                    <table>
+                    {% for user in allRequests %}
+                            <tr>
+                                    <td><label class="formlabel" for="user_examcenter">{{ user.requester }} has requested to {{ user.requested_to }}</label></td>
+                         
+                            </tr>
+                    {% endfor %}
+                    </table>
+
+         </td>
+      </tr>
+</table>
+{% endblock %}
